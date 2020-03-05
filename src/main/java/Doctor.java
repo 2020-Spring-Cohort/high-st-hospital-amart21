@@ -1,5 +1,5 @@
 
-public class Doctor extends Employee implements CanTreatPatients{
+public class Doctor extends Employee {
 
     private String specialtyArea;
     private int bloodAmount = 30;
@@ -7,7 +7,7 @@ public class Doctor extends Employee implements CanTreatPatients{
 
     public Doctor(String name, int salary, String specialtyArea) {
         super(name, salary);
-        super.job = "Doctor";
+        super.duty = "Doctor";
         this.specialtyArea = specialtyArea;
     }
     public String getSpecialtyArea() {
@@ -21,14 +21,14 @@ public class Doctor extends Employee implements CanTreatPatients{
     public int getHealthAmount() {
         return healthAmount;
     }
-    @Override
-    public void drawBlood (int amount){
-        return;
-    }
-    @Override
-    public void treatPatient(int amount) {
-
-    }
+//    @Override
+//    public void drawBlood (int amount){
+//        return;
+//    }
+//    @Override
+//    public void treatPatient(int amount) {
+//
+//    }
 }
 
 

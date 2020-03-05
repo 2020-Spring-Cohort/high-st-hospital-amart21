@@ -5,13 +5,13 @@ public abstract class Employee {
 
     private static int count = 100;
 
-    private int empNumber;
+    private int employeeNumber;
 
     private int salary;
 
     private int income;
 
-    protected String job;
+    protected String duty;
 
     public int getBloodAmount() {
         return 0;
@@ -23,27 +23,27 @@ public abstract class Employee {
     public Employee(String name, int salary) {
         this.name = name;
         this.salary = salary;
-        setEmpNumber(++count);
+        setEmployeeNumber(++count);
     }
 
     // Getters
     public String getName(){
         return name;
     }
-    public String getJob() {
-        return job;
+    public String getDuty() {
+        return duty;
     }
-    public int getEmpNumber() {
-        return empNumber;
+    public int getEmployeeNumber() {
+        return employeeNumber;
     }
     public int getSalary() {
         return salary;
     }
-    public boolean isHasBeenPaid() {
+    public boolean hasBeenPaid() {
         return hasBeenPaid;
     }
-    public void setEmpNumber(int count) {
-        this.empNumber = count;
+    public void setEmployeeNumber(int count) {
+        this.employeeNumber = count;
     }
     public void payEmployee(){
         income =+ salary;
