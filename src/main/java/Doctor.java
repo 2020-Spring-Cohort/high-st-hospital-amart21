@@ -1,37 +1,36 @@
-import org.w3c.dom.ls.LSOutput;
 
-import javax.swing.*;
-import java.util.concurrent.LinkedTransferQueue;
+public class Doctor extends Employee implements CanTreatPatients{
 
-abstract class Doctor extends Employee  {
-//
+    private String specialtyArea;
+    private int bloodAmount = 30;
+    private int healthAmount = 25;
 
-    public Doctor(String positionType ) {
-        super(positionType);
-        super.positionType = "Doctor";
-        payRate = 90000;
-        checkUp = 10;
-        drawBlood = -10;
+    public Doctor(String name, int salary, String specialtyArea) {
+        super(name, salary);
+        super.job = "Doctor";
+        this.specialtyArea = specialtyArea;
+    }
+    public String getSpecialtyArea() {
+        return specialtyArea;
+    }
+    @Override
+    public int getBloodAmount() {
+        return bloodAmount;
+    }
+    @Override
+    public int getHealthAmount() {
+        return healthAmount;
+    }
+    @Override
+    public void drawBlood (int amount){
+        return;
+    }
+    @Override
+    public void treatPatient(int amount) {
+
+    }
 }
 
-}
-   //     public Doctor (String employeeName){
-    //public Doctor(String name, int payRate, int employeeNumber, String position, String department) {
-//        super(employeeName);
-//        super.positionType = "Doctor";
-//
-//    }
-
-//    public Doctor(String specialityArea, int payRate, int employeeNumber) {
-//        super(specialityArea, payRate) ;
-//        this.specialityArea = specialityArea;
-
-//    public String Area;
-//    public int payRate;
-//    public String workDuties;
-//    public void drawBlood(Patient testPatient){
-//        testPatient.giveBlood();
-//    }
 
 
 

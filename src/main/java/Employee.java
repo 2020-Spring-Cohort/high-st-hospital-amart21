@@ -1,57 +1,56 @@
-
 public abstract class Employee {
-    public int payRate;
-    public String employeeName;
-    public int employeeNumber;
-    public String position;
-    public String department;
-    public int checkUp = 10;
-    public String positionType;
-    public int drawBlood = 10;
+    protected String name;
 
-    // create constructor
-//    public Employee(String name, int payRate, int employeeNumber, String position, String department) {
-//        super();
-//
-//        this.employeeName = name;
-//        this.payRate = payRate;
-//        this.employeeNumber = employeeNumber;
-//        this.position = positionType;
-//        this.department = department;
+    public boolean hasBeenPaid = false;
 
+    private static int count = 100;
 
+    private int empNumber;
 
-    public Employee(String positionType) {
-        this.position = positionType;
+    private int salary;
+
+    private int income;
+
+    protected String job;
+
+    public int getBloodAmount() {
+        return 0;
+    }
+    public int getHealthAmount() {
+        return 0;
     }
 
-    public String getName() {
-
-        return employeeName;
-    }
-    public int getEmployeeNumber(){
-        return employeeNumber;
-    }
-    public int getPayRate(){
-        return payRate;
-    }
-    public String getPositionType(){
-        return position;
-    }
-    public String getDepartment(){
-        return department;
+    public Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
+        setEmpNumber(++count);
     }
 
-    public abstract int drawBlood();
-
-        @Override
-        public String toString () {
-            return ("Employee" + "payRate $" + payRate + ", name = " + employeeName + '\'' +
-                    ", employeeNumber = " + employeeNumber + " Position " + position);
-        }
+    // Getters
+    public String getName(){
+        return name;
+    }
+    public String getJob() {
+        return job;
+    }
+    public int getEmpNumber() {
+        return empNumber;
+    }
+    public int getSalary() {
+        return salary;
+    }
+    public boolean isHasBeenPaid() {
+        return hasBeenPaid;
+    }
+    public void setEmpNumber(int count) {
+        this.empNumber = count;
+    }
+    public void payEmployee(){
+        income =+ salary;
+        hasBeenPaid = true;
+        System.out.println("You paid " + name);
+    }
 
 }
-
-
 
 

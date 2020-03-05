@@ -1,71 +1,49 @@
 
- public class Patient  {
-    public int HEALTH_LEVEL = 10;
-    public String patientName = "Mike";
-    public int BLOOD_LEVEL = 20;
-    public int patientWellBeing;
-    public int patientStatus = HEALTH_LEVEL + BLOOD_LEVEL;
 
 
+public class Patient {
+    private int BLOOD_LEVEL = 20;
 
-    public Patient(String patientName, int HEALTH_LEVEL, int BLOOD_LEVEL, String patientStatus) {
-        this.HEALTH_LEVEL= HEALTH_LEVEL;
-        this.BLOOD_LEVEL = BLOOD_LEVEL;
-        this.patientStatus = patientStatus;
-//            super(patientName);
-//            super.patientName = "Patient";
-//            bleedAmount = 5;
+    private int HEALTH_LEVEL = 10;
+
+    private String patientName;
+
+    private boolean eligibleForDischarge;
+
+    public Patient(String name) {
+        this.patientName = name;
     }
-
     public String getPatientName() {
         return patientName;
     }
-
-    public int getHEALTH_LEVEL() {
-        return HEALTH_LEVEL;
-    }
-
     public int getBLOOD_LEVEL() {
         return BLOOD_LEVEL;
     }
-    public int getPatientStatus(){
-        return patientStatus; }
-
-    public void patientWellBeing() {
-        if (BLOOD_LEVEL <= 10 && HEALTH_LEVEL <= 15) {
-            System.out.println(patientName + " is in BAD SHAPE!");
-        } else
-            System.out.println(patientName + " is doing good.");
+    public boolean determineDischarge(){
+        boolean answer = false;
+        if ((this.HEALTH_LEVEL > 30 ) && (this.BLOOD_LEVEL > 30)){
+            answer = true;
+        }
+        setEligibleForDischarge(answer);
+        return answer;
     }
-     public void tick() {
-         BLOOD_LEVEL -= 2;
-         if (BLOOD_LEVEL > 20) {
-             BLOOD_LEVEL = 20;
-         }
-         if (BLOOD_LEVEL < 10) {
-             System.out.println("" + patientName + " needs medical attention.");
-
-         }
-         HEALTH_LEVEL -= 3;
-         if (HEALTH_LEVEL > 10) {
-             HEALTH_LEVEL = 10;
-             System.out.println(""+ patientName + " needs blood drawn.");
-         }
-     }
-         public String toString() {
-             return ("Patient" + "named" + patientName + "has stats of " + "Blood Level:" + BLOOD_LEVEL + " and " +
-                     "Health Level:" + HEALTH_LEVEL);
-         }
-         public int patientStatus(){
-         if(patientStatus ( HEALTH_LEVEL + BLOOD_LEVEL ==30){
-             patientStatus = 30;
-                 System.out.println("Patient" + patientName + " is doing well. And they have a Blood Level of" + BLOOD_LEVEL +
-                         BLOOD_LEVEL + " and a Health Level of" + HEALTH_LEVEL + ".");
-             }else
-                 if(patientStatus(HEALTH_LEVEL + BLOOD_LEVEL <30)) {
-                     System.out.println("Patient" + patientName + " needs a checkup - STAT!");
-                 }
-         }
-         }
-
+    public int getHEALTH_LEVEL() {
+        return HEALTH_LEVEL;
+    }
+     public void setEligibleForDischarge(boolean e) {
+        this.eligibleForDischarge = e;
+    }
+    public void setBLOOD_LEVEL(int bloodAmount){
+        this.BLOOD_LEVEL += bloodAmount;
+    }
+    public void setHEALTH_LEVEL(int healthAmount){
+        this.HEALTH_LEVEL += healthAmount;
+    }
+    public void printPatientStats(){
+        System.out.println("Name         :  "+ patientName);
+        System.out.println("Blood Level  :  "+ BLOOD_LEVEL);
+        System.out.println("Health Level :  " + HEALTH_LEVEL);
+        System.out.println("Can Discharge:  " + eligibleForDischarge);
+    }
+}
 
