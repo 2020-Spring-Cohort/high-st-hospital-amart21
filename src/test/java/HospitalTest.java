@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HospitalTest {
 
@@ -28,18 +29,27 @@ public class HospitalTest {
     @Test
     public void shouldBeAbleToShowNumberOfEmployees(){
         ArrayList<Employee> list = testHospital.getEmployees();
-        testHospital.showAllEmployees();
+        int result = list.size();
+        assertEquals(4, result);
+        System.out.println(result);
+
     }
     @Test
-    public void shouldBeAbleToPrintEmployees(){
+    public void shouldBeAbleToShowEmployees(){
         ArrayList<Employee> printList = testHospital.getEmployees();
         testHospital.showAllEmployees();
     }
     @Test
     public void shouldBeAbleToPayEmployees(){
         testHospital.showAllEmployees();
-        testHospital.showAllEmployees();
+        testHospital.payAllEmployees();
         testHospital.showAllEmployees();
 
     }
+    @Test
+    public void showNumberOfPatients(){
+        int count = testHospital.getPatientCount();
+        assertEquals(2, count);
+    }
+
 }

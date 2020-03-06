@@ -34,4 +34,10 @@ import java.util.ArrayList;
             }
         }
 
+        public void payAllEmployees() {
+            for (Employee name: HospitalEmployees.values()){
+                System.out.println(name.getName() + " " + name.getDuty() + " " + name.getEmployeeNumber() + " was paid $" + name.getSalary());
+                name.hasBeenPaid = true;
+            }
+        }
     }
