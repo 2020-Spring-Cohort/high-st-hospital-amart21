@@ -50,6 +50,7 @@ public class HospitalTest {
     public void showNumberOfPatients(){
         int count = testHospital.getPatientCount();
         assertEquals(2, count);
+        System.out.println(count);
     }
 
 }
