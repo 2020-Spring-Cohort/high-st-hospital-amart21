@@ -28,4 +28,15 @@ public class PatientTest {
         int result = testHospital.getPatients().size();
         assertEquals(2,result);
     }
+    @Test
+    public void shouldBeAbleToShowPatientStats(){
+        testPatient.printPatientStats();
+    }
+    @Test
+    public void shouldBeAbleToMakePatient(){
+        Patient patientUnderTest = new Patient("Wrektd");
+        String result = patientUnderTest.getPatientName();
+        assertEquals("Wrektd", result);
+        System.out.println(result);
+    }
 }

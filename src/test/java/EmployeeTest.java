@@ -36,12 +36,6 @@ public class EmployeeTest {
         doctorUnderTest.payEmployee();
 
     }
-    @Test
-    public void shouldBeAbleToMakePatient(){
-        Patient patientUnderTest = new Patient("Wrektd");
-        String result = patientUnderTest.getPatientName();
-        assertEquals("Wrektd", result);
-        System.out.println(result);
-    }
+
 
 }
