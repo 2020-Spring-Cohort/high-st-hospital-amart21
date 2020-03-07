@@ -1,6 +1,4 @@
 
-
-
 public class Patient {
     private int BLOOD_LEVEL = 20;
 
@@ -19,7 +17,7 @@ public class Patient {
     public int getBLOOD_LEVEL() {
         return BLOOD_LEVEL;
     }
-    public boolean determineDischarge(){
+    public boolean canDischarge(){
         boolean answer = false;
         if ((this.HEALTH_LEVEL > 30 ) && (this.BLOOD_LEVEL > 30)){
             answer = true;
