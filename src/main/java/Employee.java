@@ -2,15 +2,10 @@ public abstract class Employee {
     protected String name;
 
     public boolean hasBeenPaid = false;
-
-    private static int count = 100;
-
+    private static int count = 10;
     private int employeeNumber;
-
     private int salary;
-
     private int income;
-
     protected String duty;
 
     public int getBloodAmount() {
@@ -25,8 +20,6 @@ public abstract class Employee {
         this.salary = salary;
         setEmployeeNumber(++count);
     }
-
-    // Getters
     public String getName(){
         return name;
     }
@@ -48,7 +41,7 @@ public abstract class Employee {
     public void payEmployee(){
         income =+ salary;
         hasBeenPaid = true;
-        System.out.println("You paid " + name);
+        System.out.println(name + " was paid");
     }
 
 }

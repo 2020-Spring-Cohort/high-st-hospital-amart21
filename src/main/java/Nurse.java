@@ -1,4 +1,4 @@
-public class Nurse extends Employee {
+public class Nurse extends Employee implements CanTreatPatients {
     private int bloodAmount = 20;
     private int healthAmount = 15;
     private int numberOfPatients = 0;
@@ -18,14 +18,14 @@ public class Nurse extends Employee {
     public void increasePatients(){
         numberOfPatients += 1;
     }
-//    @Override
-//    public void drawBlood(int bloodAmount) {
-//    }
-//    @Override
-//    public void treatPatient(int amount) {
-//        numberOfPatients += amount;
-//        System.out.println("Nurse " + name +  " is now treating " + numberOfPatients + " patients.");
-//    }
+    @Override
+    public void drawBlood(int bloodAmount) {
+    }
+    @Override
+    public void treatPatient(int amount) {
+        numberOfPatients += amount;
+        System.out.println("Nurse " + name +  " is treating " + numberOfPatients + " patients.");
+    }
 }
 
 

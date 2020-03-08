@@ -6,6 +6,7 @@ public class Janitor extends Employee {
         super(name, salary);
         super.duty = this.duty;
     }
+    public boolean isCleaning = false;
 
 
 }
