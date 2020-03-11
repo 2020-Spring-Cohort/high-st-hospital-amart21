@@ -101,7 +101,8 @@ public class HospitalApplication {
 
         while (pickEmployee == false) {
             System.out.println("Who should treat them? (Pick by Employee Number) ");
-            hospital.showAllEmployees();
+//            hospital.showAllEmployees();
+            hospital.showAllMedicalStaff();
             int choice = input.nextInt();
             input.nextLine();
             pickEmployee = hospital.treatPatient(choice,patientChoice);

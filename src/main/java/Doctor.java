@@ -9,6 +9,7 @@ public class Doctor extends Employee implements CanTreatPatients {
         super(name, salary);
         super.duty = "Doctor";
         this.specialtyArea = specialtyArea;
+
     }
     public String getSpecialtyArea() {
         return specialtyArea;
